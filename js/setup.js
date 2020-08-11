@@ -10,7 +10,7 @@ var nameArr = ['Иван', 'Хуан Себастьян', 'Мария', 'Кри�
 var subNameArr = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
-
+var fireballColor= ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
@@ -80,6 +80,25 @@ userNameInput.addEventListener('input', function (evt) {
 var randomElement = function (arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
+
+var setupWizard = setup.querySelector('.setup-wizard');
+var setupFireball = setup.querySelector('.setup-fireball-wrap')
+var wizardCoat = setupWizard.querySelector('.wizard-coat');
+var wizardEyes = setupWizard.querySelector('.wizard-eyes');
+
+wizardCoat.addEventListener('click', function () {
+  wizardCoat.style.fill = randomElement(coatColor);
+});
+
+wizardEyes.addEventListener('click', function () {
+  wizardEyes.style.fill = randomElement(eyesColor);
+});
+
+setupFireball.addEventListener('click', function () {
+  setupFireball.style.backgroundColor = randomElement(fireballColor);
+})
+
+
 
 var wizards = [
   {
