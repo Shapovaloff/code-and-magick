@@ -19,6 +19,15 @@
     document.removeEventListener('keydown', popupEscPress);
   }
 
+  var form = document.querySelector('.setup-wizard-form');
+
+  form.addEventListener('submit', function (evt) {
+    window.backend.save(new FormData(form), function () {
+      setup.classList.add('hidden');
+    }, alert);
+    evt.preventDefault();
+  });
+
   setupOpen.addEventListener('click', function () {
     openPopup();
   });
